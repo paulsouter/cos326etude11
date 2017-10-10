@@ -111,22 +111,24 @@ public class LengthApp {
         HashMap<String, Integer> customerData = new HashMap<>();
         System.out.println("Values");
         for(String s : items) {
-        	int v = (int) (1 + Math.random()*10);
-        	System.out.println(s + " " + v);
-        	customerData.put(s, v);
+            int v = (int) (1 + Math.random() * 10);
+            System.out.println(s + " " + v);
+            customerData.put(s, v);
         }
         CustomerInfo customer = new Customer(customerData);
         System.out.println("------------------");
-        for(int i = 0; i < 4; i++) {
-        	int b = (int) (1 + Math.random()*30);
-        	System.out.println("Budget: " + b);
-        	
+//           for(int i = 0; i < 4; i++) {
+        int b = (int) (1 + Math.random() * 30);
+        System.out.println("Budget: " + b);
+
         System.out.println("**** 1 ****");
         BargainFinder bf = new BargainFinder(site, customer, b);
-        for(String s: bf.shoppingList()) System.out.println(s);
+        for (String s : bf.shoppingList()) {
+            System.out.println(s);
+        }
         System.out.println("**** 2 ****");
 
-        }
-        
+        //  }
+        return;
     }
 }
